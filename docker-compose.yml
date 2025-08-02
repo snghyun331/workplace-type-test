@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: shjeon97/work-place-type-test-front:1.0.0
+    container_name: work-place-type-test-front
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - "3006:80"
+    env_file:
+      - ./.env
